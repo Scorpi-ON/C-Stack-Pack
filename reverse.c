@@ -20,10 +20,10 @@ int main(void)
     puts("Заполните стек:");
     myStack = create();
     printf("\nИсходный стек: ");
-    display(myStack);
+    printToFile(myStack, stdout);
     printf("Перевёрнутый стек: ");
     myReversedStack = reverse(myStack);
-    display(myReversedStack);
+    printToFile(myReversedStack, stdout);
 
     clear(myStack);
     clear(myReversedStack);

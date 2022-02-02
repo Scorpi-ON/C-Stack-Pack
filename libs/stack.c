@@ -63,10 +63,10 @@ void clear(STACK *node)
 }
 
 
-void display(STACK *node)
+void printToFile(STACK *node, FILE *output)
 {
-    printf("{ [%d", node -> value);
+    fprintf(output, "{ [%d", node -> value);
     while (node = node -> next)
-        printf(", ->], [%d", node -> value);
-    puts(", x] }");
+        fprintf(output, ", ->], [%d", node -> value);
+    fprintf(output, ", x] }");
 }

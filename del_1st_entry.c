@@ -36,11 +36,11 @@ int main(void)
     printf("\nВведите элемент, который нужно удалить: ");
     scanInt(&elem);
     printf("\nИсходный стек: ");
-    display(myStack);
+    printToFile(myStack, stdout);
     if (delFirstEntry(myStack, elem))
     {
         printf("После удаления первого вхождения %d: ", elem);
-        display(myStack);
+        printToFile(myStack, stdout);
     }
     else
         printf("Элемент %d не найден! Нечего удалять.\n", elem);
