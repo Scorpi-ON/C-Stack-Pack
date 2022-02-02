@@ -1,5 +1,5 @@
-#include "libs/tools.h"
-#include "libs/stack.h"
+#include "lib/tools.h"
+#include "lib/stack.h"
 
 
 bool removeFirstEvenElem(STACK **head)
