@@ -1,5 +1,5 @@
-#include "libs/tools.h"
-#include "libs/stack.h"
+#include "lib/tools.h"
+#include "lib/stack.h"
 
 
 STACK *reverse(STACK *node)
@@ -21,7 +21,7 @@ int main(void)
     myStack = create();
     printf("\nИсходный стек: ");
     printToFile(myStack, stdout);
-    printf("Перевёрнутый стек: ");
+    printf("\nПеревёрнутый стек: ");
     myReversedStack = reverse(myStack);
     printToFile(myReversedStack, stdout);
 
