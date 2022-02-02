@@ -17,7 +17,7 @@ int main(void)
     printToFile(myStack, stdout);
     // Target func call + prints of results to stdout or FILEs.
 
-    // clear() for all used STACKs. 
+    clear(myStack); // And for other used STACKs.
     system("pause");
     return 0;
 }
