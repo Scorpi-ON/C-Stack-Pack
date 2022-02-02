@@ -1,5 +1,5 @@
-#include "libs/tools.h"
-#include "libs/stack.h"
+#include "lib/tools.h"
+#include "lib/stack.h"
 
 
 bool delFirstEntry(STACK *node, int entry)
@@ -39,7 +39,7 @@ int main(void)
     printToFile(myStack, stdout);
     if (delFirstEntry(myStack, elem))
     {
-        printf("После удаления первого вхождения %d: ", elem);
+        printf("\nПосле удаления первого вхождения %d: ", elem);
         printToFile(myStack, stdout);
     }
     else
