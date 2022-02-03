@@ -2,7 +2,7 @@
 #include "lib/stack.h"
 
 
-bool removeElemByNum(STACK **head, int num)
+void removeElemByNum(STACK **head, int num)
 {
     STACK *current = *head,
           *previous = NULL;
@@ -19,31 +19,31 @@ bool removeElemByNum(STACK **head, int num)
         else
             *head = current -> next;
         free(current);
-        return true;
     }
-    return false;
 }
 
 
 int main(void)
 {
-    STACK *myStack;
-    int num;
+    STACK *myStack = NULL;
+    int num, length;
     FILE *output = openFile("output.txt", "w");
     puts("Fill stack:");
-    myStack = create();
+    length = fill(&myStack);
     printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    printf("\nEnter the number of element you want to delete: ");
+    printf("Enter the number of element you want to delete: ");
     scanInt(&num);
-    if (removeElemByNum(&myStack, num))
+    while (num < 1 || num > length)
     {
-        printf("\nChanged stack: ");
-        printToFile(myStack, stdout);
-        printToFile(myStack, output);
+        printf("Incorrect number! It should be from 1 "
+               "to %d (stack length). Try again: ", length);
+        scanInt(&num);
     }
-    else
-        puts("\nThe number you entered is greater than the stack length! Nothing to change.");
+    removeElemByNum(&myStack, num);
+    printf("After deleting element № %d: ", num);
+    printToFile(myStack, stdout);
+    printToFile(myStack, output);
     fclose(output);
     clear(myStack);
     system("pause");

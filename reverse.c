@@ -20,7 +20,7 @@ int main(void)
     myStack = create();
     printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    printf("\nReversed stack: ");
+    printf("Reversed stack: ");
     myReversedStack = reverse(myStack);
     printToFile(myReversedStack, stdout);
     clear(myStack);

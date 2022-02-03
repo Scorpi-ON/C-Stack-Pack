@@ -28,20 +28,18 @@ int main(void)
 {
     STACK *myStack;
     FILE *output = openFile("output.txt", "w");
-
     puts("Fill stack:");
     myStack = create();
-    printf("Original stack: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
     if (removeFirstEvenElem(&myStack))
     {
-        printf("\nChanged stack: ");
+        printf("After deleting the first even elem: ");
         printToFile(myStack, stdout);
         printToFile(myStack, output);
     }
     else
-        puts("\nThere are no even numbers! Nothing to change.");
-
+        puts("There are no even numbers! Nothing to change.");
     fclose(output);
     clear(myStack);
     system("pause");
