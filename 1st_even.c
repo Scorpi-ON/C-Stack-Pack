@@ -39,7 +39,7 @@ int main(void)
         printToFile(myStack, output);
     }
     else
-        puts("There are no even numbers! Nothing to change.");
+        puts("There are no even numbers! Nothing to delete.");
     fclose(output);
     clear(myStack);
     system("pause");
