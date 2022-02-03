@@ -41,15 +41,18 @@ int main(void)
 {
     STACK *myStack;
     FILE *output = fopen("output.txt", "w+");
-
-    puts("Fill stack:");
-    myStack = create();
-    printf("\nOriginal stack: ");
-    printToFile(myStack, stdout);
-    printFrequenciesIntoFile(myStack, output);
-
-    fclose(output);
-    clear(myStack);
+    if (output == NULL)
+        perror("Error while opening \"output.txt\"");
+    else
+    {
+        puts("Fill stack:");
+        myStack = create();
+        printf("\nOriginal stack: ");
+        printToFile(myStack, stdout);
+        printFrequenciesIntoFile(myStack, output);
+        fclose(output);
+        clear(myStack);
+    }
     system("pause");
     return 0;
 }

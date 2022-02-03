@@ -28,26 +28,29 @@ bool removeElemByNum(STACK **head, int num)
 int main(void)
 {
     STACK *myStack;
-    FILE *output = fopen("output.txt", "w");
     int num;
-
-    puts("Fill stack:");
-    myStack = create();
-    printf("\nOriginal stack: ");
-    printToFile(myStack, stdout);
-    printf("\nEnter the number of element you want to delete: ");
-    scanf("%d", &num);
-    if (removeElemByNum(&myStack, num))
-    {
-        printf("\nChanged stack: ");
-        printToFile(myStack, stdout);
-        printToFile(myStack, output);
-    }
+    FILE *output = fopen("output.txt", "w");
+    if (output == NULL)
+        perror("Error while opening \"output.txt\"");
     else
-        puts("\nThe number you entered is greater than the stack length! Nothing to change.");
-
-    fclose(output);
-    clear(myStack);
+    {
+        puts("Fill stack:");
+        myStack = create();
+        printf("\nOriginal stack: ");
+        printToFile(myStack, stdout);
+        printf("\nEnter the number of element you want to delete: ");
+        scanf("%d", &num);
+        if (removeElemByNum(&myStack, num))
+        {
+            printf("\nChanged stack: ");
+            printToFile(myStack, stdout);
+            printToFile(myStack, output);
+        }
+        else
+            puts("\nThe number you entered is greater than the stack length! Nothing to change.");
+        fclose(output);
+        clear(myStack);
+    }
     system("pause");
     return 0;
 }

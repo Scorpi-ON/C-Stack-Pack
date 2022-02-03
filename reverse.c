@@ -15,17 +15,21 @@ STACK *reverse(STACK *node)
 int main(void)
 {
     STACK *myStack, *myReversedStack;
-
-    puts("Fill stack:");
-    myStack = create();
-    printf("\nOriginal stack: ");
-    printToFile(myStack, stdout);
-    printf("\nReversed stack: ");
-    myReversedStack = reverse(myStack);
-    printToFile(myReversedStack, stdout);
-
-    clear(myStack);
-    clear(myReversedStack);
+    FILE *output = fopen("output.txt", "w");
+    if (output == NULL)
+        perror("Error while opening \"output.txt\"");
+    else
+    {
+        puts("Fill stack:");
+        myStack = create();
+        printf("\nOriginal stack: ");
+        printToFile(myStack, stdout);
+        printf("\nReversed stack: ");
+        myReversedStack = reverse(myStack);
+        printToFile(myReversedStack, stdout);
+        clear(myStack);
+        clear(myReversedStack);
+    }
     system("pause");
     return 0;
 }
