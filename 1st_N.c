@@ -29,28 +29,23 @@ int main(void)
 {
     STACK *myStack;
     int num;
-    FILE *output = fopen("output.txt", "w");
-    if (output == NULL)
-        perror("Error while opening \"output.txt\"");
-    else
+    FILE *output = openFile("output.txt", "w");
+    puts("Fill stack:");
+    myStack = create();
+    printf("\nOriginal stack: ");
+    printToFile(myStack, stdout);
+    printf("\nEnter the number of element you want to delete: ");
+    scanInt(&num);
+    if (removeElemByNum(&myStack, num))
     {
-        puts("Fill stack:");
-        myStack = create();
-        printf("\nOriginal stack: ");
+        printf("\nChanged stack: ");
         printToFile(myStack, stdout);
-        printf("\nEnter the number of element you want to delete: ");
-        scanf("%d", &num);
-        if (removeElemByNum(&myStack, num))
-        {
-            printf("\nChanged stack: ");
-            printToFile(myStack, stdout);
-            printToFile(myStack, output);
-        }
-        else
-            puts("\nThe number you entered is greater than the stack length! Nothing to change.");
-        fclose(output);
-        clear(myStack);
+        printToFile(myStack, output);
     }
+    else
+        puts("\nThe number you entered is greater than the stack length! Nothing to change.");
+    fclose(output);
+    clear(myStack);
     system("pause");
     return 0;
 }

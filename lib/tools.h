@@ -10,3 +10,4 @@
 #endif
 
 void scanInt(int *elem);
+FILE *openFile(char *filename, char *mode);

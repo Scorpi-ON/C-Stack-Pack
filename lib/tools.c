@@ -26,3 +26,16 @@ void scanInt(int *elem)
         printf("Integer expected! Try again: ");
     }
 }
+
+
+FILE *openFile(char *filename, char *mode)
+{
+    FILE *file = fopen(filename, mode);
+    if (file == NULL)
+    {
+        perror("Error while opening \"output.txt\"");
+        system("pause");
+        exit(-1);
+    }
+    return file;
+}

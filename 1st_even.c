@@ -27,7 +27,7 @@ bool removeFirstEvenElem(STACK **head)
 int main(void)
 {
     STACK *myStack;
-    FILE *output = fopen("output.txt", "w");
+    FILE *output = openFile("output.txt", "w");
 
     puts("Fill stack:");
     myStack = create();
