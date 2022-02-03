@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "tools.h"
 #define STACK struct STACK
-#define continueInput() puts("Continue (+ / other symbol)?") && _getch() == '+'
+#define continueInput() puts("Continue (+ / other symbol)?\n") && _getch() == '+'
 
 STACK
 {
@@ -23,30 +23,30 @@ void push(STACK **head, int value)
 STACK *create(void)
 {
     STACK *myStack = NULL;
-    int elem;
-    for (int count = 1;
-         count <= 2 || continueInput();
-         count++)
+    int count = 0,
+        elem;
+    do
     {
-        printf("%d. ", count);
+        printf("%d. ", ++count);
         scanInt(&elem);
         push(&myStack, elem);
     }
+    while (count < 2 || continueInput());
     return myStack;
 }
 
 
 int fill(STACK **head)
 {
-    int count, elem;
-    for (count = 1;
-         count <= 2 || continueInput();
-         count++)
+    int count = 0,
+        elem;
+    do
     {
-        printf("%d. ", count);
+        printf("%d. ", ++count);
         scanInt(&elem);
         push(head, elem);
     }
+    while (count < 2 || continueInput());
     return count;
 }
 
@@ -68,5 +68,5 @@ void printToFile(STACK *node, FILE *output)
     fprintf(output, "{ [%d", node -> value);
     while (node = node -> next)
         fprintf(output, ", ->], [%d", node -> value);
-    fprintf(output, ", x] }");
+    fprintf(output, ", x] }\n");
 }
