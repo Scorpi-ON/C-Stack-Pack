@@ -27,25 +27,24 @@ bool removeElemByNum(STACK **head, int num)
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     STACK *myStack;
     FILE *output = fopen("output.txt", "w");
     int num;
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create();
-    printf("\nИсходный список: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    printf("\nВведите номер элемента, который хотите удалить: ");
+    printf("\nEnter the number of element you want to delete: ");
     scanf("%d", &num);
     if (removeElemByNum(&myStack, num))
     {
-        printf("\nИзменённый стек: ");
+        printf("\nChanged stack: ");
         printToFile(myStack, stdout);
         printToFile(myStack, output);
     }
     else
-        puts("\nВ стеке нет элемента с таким номером! Нечего изменять.");
+        puts("\nThe number you entered is greater than the stack length! Nothing to change.");
 
     fclose(output);
     clear(myStack);

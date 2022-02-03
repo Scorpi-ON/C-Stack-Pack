@@ -7,13 +7,12 @@
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     STACK *myStack; // And maybe another vars.
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create(); // Or fill(&myStack) if you need the stack length.
     // Maybe additional user input.
-    printf("\nИсходный стек: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
     // Target func call + prints of results to stdout or FILEs.
 

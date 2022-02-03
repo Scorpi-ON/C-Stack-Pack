@@ -26,22 +26,21 @@ bool removeFirstEvenElem(STACK **head)
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     STACK *myStack;
     FILE *output = fopen("output.txt", "w");
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create();
-    printf("Исходный список: ");
+    printf("Original stack: ");
     printToFile(myStack, stdout);
     if (removeFirstEvenElem(&myStack))
     {
-        printf("\nИзменённый стек: ");
+        printf("\nChanged stack: ");
         printToFile(myStack, stdout);
         printToFile(myStack, output);
     }
     else
-        puts("\nВ стеке нет чётных чисел! Нечего изменять.");
+        puts("\nThere are no even numbers! Nothing to change.");
 
     fclose(output);
     clear(myStack);

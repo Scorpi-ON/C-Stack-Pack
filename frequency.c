@@ -39,13 +39,12 @@ void printFrequenciesIntoFile(STACK *head, FILE *output)
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     STACK *myStack;
     FILE *output = fopen("output.txt", "w+");
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create();
-    printf("\nИсходный стек: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
     printFrequenciesIntoFile(myStack, output);
 

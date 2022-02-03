@@ -23,6 +23,6 @@ void scanInt(int *elem)
     while(!scanf("%d", elem) || getchar() != '\n')
     {
         fflush();
-        printf("Ожидалось целое число! Попробуйте снова: ");
+        printf("Integer expected! Try again: ");
     }
 }

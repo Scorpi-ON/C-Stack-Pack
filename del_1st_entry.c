@@ -27,23 +27,22 @@ bool delFirstEntry(STACK *node, int entry)
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     int elem;
     STACK *myStack;
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create();
-    printf("\nВведите элемент, который нужно удалить: ");
+    printf("\nEnter the element you want to delete: ");
     scanInt(&elem);
-    printf("\nИсходный стек: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
     if (delFirstEntry(myStack, elem))
     {
-        printf("\nПосле удаления первого вхождения %d: ", elem);
+        printf("\nChanged stack: ");
         printToFile(myStack, stdout);
     }
     else
-        printf("Элемент %d не найден! Нечего удалять.\n", elem);
+        printf("Element %d was not found! Nothing to delete.\n", elem);
 
     clear(myStack);
     system("pause");

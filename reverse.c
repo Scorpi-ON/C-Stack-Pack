@@ -14,14 +14,13 @@ STACK *reverse(STACK *node)
 
 int main(void)
 {
-    setlocale(LC_ALL, "RUS");
     STACK *myStack, *myReversedStack;
 
-    puts("Заполните стек:");
+    puts("Fill stack:");
     myStack = create();
-    printf("\nИсходный стек: ");
+    printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    printf("\nПеревёрнутый стек: ");
+    printf("\nReversed stack: ");
     myReversedStack = reverse(myStack);
     printToFile(myReversedStack, stdout);
 

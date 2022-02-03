@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "tools.h"
 #define STACK struct STACK
-#define continueInput() puts("Продолжить (+ / другой символ)?") && _getch() == '+'
+#define continueInput() puts("Continue (+ / other symbol)?") && _getch() == '+'
 
 STACK
 {
