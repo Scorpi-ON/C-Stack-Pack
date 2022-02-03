@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define fflush() while (getchar() != '\n')
 
 #ifndef _WIN32
     #include <termios.h>
+    #define system(command);
     char _getch(void)
     {
         struct termios oldSettings, newSettings;
