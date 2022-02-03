@@ -33,6 +33,7 @@ int main(void)
     }
     else
         puts("The first and the last elements are equal! Nothing to change.");
+    fclose(output);
     clear(myStack);
     system("pause");
     return 0;

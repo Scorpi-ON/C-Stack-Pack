@@ -16,6 +16,7 @@ int main(void)
     printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
     // Target func call + prints of results to stdout & output file.
+    fclose(output);
     clear(myStack); // And for other used STACKs.
     system("pause");
     return 0;

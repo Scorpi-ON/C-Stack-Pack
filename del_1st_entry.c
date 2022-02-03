@@ -29,6 +29,7 @@ int main(void)
 {
     STACK *myStack;
     int elem;
+    FILE *output = openFile("output.txt", "w");
     puts("Fill stack:");
     myStack = create();
     printf("\nOriginal stack: ");
@@ -39,9 +40,11 @@ int main(void)
     {
         printf("After deleting the first entry of %d: ", elem);
         printToFile(myStack, stdout);
+        printToFile(myStack, output);
     }
     else
         printf("Element %d was not found! Nothing to delete.\n", elem);
+    fclose(output);
     clear(myStack);
     system("pause");
     return 0;

@@ -23,6 +23,8 @@ int main(void)
     printf("Reversed stack: ");
     myReversedStack = reverse(myStack);
     printToFile(myReversedStack, stdout);
+    printToFile(myReversedStack, output);
+    fclose(output);
     clear(myStack);
     clear(myReversedStack);
     system("pause");
