@@ -12,10 +12,10 @@ int main(void)
     FILE *output = openFile("output.txt", "w");
     puts("Fill stack:");
     myStack = create(); // Or fill(&myStack) if you need the stack length.
-    // Possibly additional user input.
     printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    // Target func call + prints of results to stdout & output file.
+    /* Possibly additional user input, target func call
+       and prints of results to stdout & output file. */
     fclose(output);
     clear(myStack); // And for other used STACKs.
     system("pause");
