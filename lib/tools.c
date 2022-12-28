@@ -22,10 +22,9 @@
 
 void scanInt(int *elem)
 {
-    while(!scanf("%d", elem) || getchar() != '\n')
-    {
+    while (!scanf("%d", elem) || getchar() != '\n') {
         fflush();
-        printf("Integer expected! Try again: ");
+        printf("Ожидалось целое число! Попробуйте снова: ");
     }
 }
 
@@ -33,9 +32,8 @@ void scanInt(int *elem)
 FILE *openFile(char *filename, char *mode)
 {
     FILE *file = fopen(filename, mode);
-    if (file == NULL)
-    {
-        perror("Error while opening \"output.txt\"");
+    if (file == NULL) {
+        perror("При открытии файла \"output.txt\" произошла ошибка!");
         system("pause");
         exit(-1);
     }

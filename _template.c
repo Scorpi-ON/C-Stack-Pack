@@ -2,22 +2,25 @@
 #include "lib/stack.h"
 
 
-// Target func.
+// Целевая функция
 
 
 int main(void)
 {
+    #ifdef _WIN32
+    system("chcp 1251");
+    #endif
     STACK *myStack;
-    // Possibly another vars.
+    // Возможно, какие-то переменные
     FILE *output = openFile("output.txt", "w");
     puts("Fill stack:");
-    myStack = create(); // Or fill(&myStack) if you need the stack length.
+    myStack = create(); // Можно вызвать fill(&myStack), если нужно получить длину стека
     printf("\nOriginal stack: ");
     printToFile(myStack, stdout);
-    /* Possibly additional user input, target func call
-       and prints of results to stdout & output file. */
+    /* Возможно, дополнительный пользовательский ввод, вызов целевой функции,
+       а также печать результатов в stdout и выходные файлы */
     fclose(output);
-    clear(myStack); // And for other used STACKs.
+    clear(myStack); // Нужно вызвать и для других стеков, созданных в программе
     system("pause");
     return 0;
 }
