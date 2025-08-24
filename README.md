@@ -1,5 +1,5 @@
 # Stack Pack — deal with dynamic structuers easily!
-This toolkit was created during the preparation for the programming exam. To speed up the solution of tasks from several exam tickets, I desided to separate the common I/O and stack functions from the unique ones for each specific task.
+This toolkit was created during the preparation for the programming exam. To speed up the solution of tasks from several exam tickets, I decided to separate the common I/O and stack functions from the unique ones for each specific task.
 
 **It will be useful for you if you want to:**
 - better understand dynamic structures and recursion 
