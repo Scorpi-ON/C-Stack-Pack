@@ -6,32 +6,31 @@ This toolkit was created during the preparation for the programming exam. To spe
 - improve C skills — the package covers topics such as pointers, files, preprocessor etc.
 - solve another ticket or lab work — focus on your task, the rest of code is already written!
 
-### Works in
+## Should work in
 - [x] Windows *(Visual Studio IDE)*
 - [x] Linux *(Clang compiler)*
-- [ ] Mac *(not tested)*
 
-### Structure
-- **lib** — 
-    - **stack.c** — 
-    - **stack.h** —
-    * **tools.c** — 
-    * **tools.h** —
-- **_template.c** — 
-- **README.md** — this documentation.
-- Tasks
+## Structure
+- **lib** — shared code implementing stack and its methods
+    - **stack.c**
+    - **stack.h**
+    * **tools.c**
+    * **tools.h**
+- **_template.c** — use this file to solve new tasks
+- Task files
 
-### Using
-#### Windows:
-...
-#### Linux:
+## Using
+### Windows:
+Not tested.
+
+### Linux:
 0. `git` and `clang` should be installed
 1. Clone the repo:
-```
+```shell
 git clone ... && cd Stack-Pack
 ```
 2. Compile one of the tasks connecting files **tools.c** and **stack.c**:
-```
+```shell
 clang -g <task> tools.c stack.c -o <output>
 ```
 3. Run the resulting executable:
